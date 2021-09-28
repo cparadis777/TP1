@@ -9,9 +9,6 @@
 #include "fonctionsUtilitaires.h"
 using namespace std;
 
-const int MAX_ETUDIANTS = 4;
-const int MAX_EXAMENS = 2;
-
 int main() {
     int num;
     int nbEleves;
