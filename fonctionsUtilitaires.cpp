@@ -10,10 +10,11 @@
 
 using namespace std;
 
-void saisieNotes(array<array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes) {
-    int* p_nbEleves;
+/*p_nbEleves */
+void saisieNotes(array<array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_nbEleves) {
 
     for (int i = 0; i < *p_nbEleves; i++) {
+        cout << "Saissisez les notes de l'étudiant " << i + 1 << endl;
         for (int j = 0; j < MAX_EXAMENS; j++) {
             cout << "Saisissez la note de l'examen " << j + 1 << endl;
             cin >> p_tabNotes[i][j];
@@ -23,8 +24,8 @@ void saisieNotes(array<array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes) {
 
 int minimum(array<array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_nbEleves) {
     int noteFaible = 100;
-    for (int i = 0; i < MAX_ETUDIANTS; i++) {
-        for (int j = 0; j < MAX_EXAMENS; i++) {
+    for (int i = 0; i < *p_nbEleves; i++) {
+        for (int j = 0; j < MAX_EXAMENS; j++) {
             if (p_tabNotes[i][j] < noteFaible) {
                 noteFaible = p_tabNotes[i][j];
             }
@@ -34,15 +35,15 @@ int minimum(array<array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_n
 }
 
 int maximum(array<array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_nbEleves) {
-    int noteelevee = 100;
+    int noteElevee = 0;
     for (int i = 0; i < *p_nbEleves; i++) {
         for (int j = 0; j < MAX_EXAMENS; j++) {
-            if (p_tabNotes[j][j] > noteelevee) {
-                noteelevee = p_tabNotes[i][j];
+            if (p_tabNotes[i][j] > noteElevee) {
+                noteElevee = p_tabNotes[i][j];
             }
         }
     }
-    return noteelevee;
+    return noteElevee;
 
 }
 

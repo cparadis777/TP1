@@ -13,9 +13,9 @@
 const int MAX_ETUDIANTS = 4;
 const int MAX_EXAMENS = 2;
 
-void saisieNotes (std::array<std::array<int, MAX_EXAMENS>, MAX_ETUDIANTS > p_tabNotes, int*);
-int minimum (std::array<std::array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int*);
-int maximum (std::array<std::array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int*);
+void saisieNotes (std::array<std::array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_nbEleves);
+int minimum (std::array<std::array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_nbEleves);
+int maximum (std::array<std::array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_nbEleves);
 double ecartType (std::array<int, MAX_EXAMENS>& p_tabNotesEtudiant);
 void afficherTableau (std::array<std::array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_nbEleves);
 

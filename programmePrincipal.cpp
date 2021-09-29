@@ -16,10 +16,12 @@ int main() {
 
     bool valeurCorrecte = false;
     while (!valeurCorrecte) {
-        cout << "Saisissez le nombre d'élèves" << endl;
+        cout << "Saisissez le nombre d'élèves. Il doit être compris entre 1 et " << MAX_ETUDIANTS << "." << endl;
         cin >> nbEleves;
         if (nbEleves > 0 && nbEleves <= MAX_ETUDIANTS) {
             valeurCorrecte = true;
+        } else {
+            cout << "La valeur entrée n'est pas valide." << endl;
         }
     }
     cout << "Saisir uniquement des nombres entiers positifs et inférieurs à 100 " << endl <<
