@@ -47,22 +47,22 @@ int maximum(array<array<int, MAX_EXAMENS>, MAX_ETUDIANTS >& p_tabNotes, int* p_n
 
 }
 
-double ecartType(array<int, MAX_EXAMENS>& p_tabNotesEtudiant) {
+double ecartType(std::array<int, MAX_EXAMENS >& p_tabNotesEtudiant) {
     int i = 0;
     float somme = 0;
     float sommeCarree = 0;
-
     while (i < MAX_EXAMENS) {
+
         somme += p_tabNotesEtudiant[i];
-        sommeCarree = +p_tabNotesEtudiant[i] * p_tabNotesEtudiant[i];
+        sommeCarree += p_tabNotesEtudiant[i] * p_tabNotesEtudiant[i];
         i++;
     }
     float moyenne;
     moyenne = somme / MAX_EXAMENS;
     double variance;
-    variance = sommeCarree / MAX_EXAMENS - moyenne * moyenne;
+    variance = (sommeCarree / MAX_EXAMENS) - (moyenne * moyenne);
     double ecartType;
-    ecartType = sqrt(variance);
+    ecartType = std::sqrt(variance);
     return ecartType;
 }
 

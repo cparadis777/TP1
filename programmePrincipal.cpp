@@ -27,7 +27,7 @@ int main() {
     cout << "Saisir uniquement des nombres entiers positifs et inférieurs à 100 " << endl <<
             "(ce programme ne prend pas en charge la validation de saisie)" << endl;
     saisieNotes(tabNotes, &nbEleves);
-    cout << "taille" << tabNotes.size() << endl;
+    cout << "taille " << nbEleves << endl;
     cout << "note minimum : " << minimum(tabNotes, &nbEleves) << endl;
     cout << "note maximum :" << maximum(tabNotes, &nbEleves) << endl;
     cout << "écart type : " << ecartType(tabNotes[0]) << endl;
